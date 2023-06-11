@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.acorn</groupId>
+    <artifactId>WebAppBoardStudy</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <name>WebAppBoardStudent</name>
+    <packaging>war</packaging>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <junit.version>5.9.1</junit.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>4.0.1</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>${junit.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- Junit 이라는 자바 테스트 도구, 메이븐,gradle 프로젝트는 이미 junit 이 내포되있다
+            // JVM 처럼 독자적인 실행엔진이 있다 Junit Jupiter
+            독자적이므로 프레임워크라고 부른다.
+        -->
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <version>${junit.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- mysql driver 종속성 -->
+        <!-- 메이븐 pom.xml 에서 종속성 추가(맥북 : command + n)
+             mysql connector/j 추가 후 메이븐 프로젝트 다시로드 실행 -->
+        <dependency>
+            <groupId>com.mysql</groupId>
+            <artifactId>mysql-connector-j</artifactId>
+            <version>8.0.32</version>
+        </dependency>
+
+        <!-- mysql driver 종속성 -->
+        <!-- 메이븐 pom.xml 에서 종속성 추가(맥북 : command + n)
+             project lombok 추가 후 메이븐 프로젝트 다시로드 실행 -->
+        <!-- lombok : POJO 를 자동 생성하는 라이브러리로 개발툴과 같이 연계 작업한다. getter/setter 를 자동생성 해준다. (이클립스, 인텔리제이에 깔려있다) -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.26</version>
+        </dependency>
+        <dependency>
+            <groupId>org.json</groupId>
+            <artifactId>json</artifactId>
+            <version>20220924</version>
+        </dependency>
+
+
+    </dependencies>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>3.3.2</version>
+            </plugin>
+        </plugins>
+    </build>
+</project>
